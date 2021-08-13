@@ -30,7 +30,7 @@ ADL_BOT_RQ = {}
 START_TEXT = """
 Hello {} , I'am a simple file or media rename bot with permanent thumbnail support.
 
-Made by @FayasNoushad
+Made by @Achu_vjsvj
 """
 HELP_TEXT = """
 <b><u>Rename</u></b>
@@ -46,22 +46,22 @@ HELP_TEXT = """
 <b><u>Show Thumbnail</u></b>
 ➠ Send /showthumb for view current thumbnail.
 
-Made by @FayasNoushad
+Made by @Achu_vjsvj
 """
 ABOUT_TEXT = """
-- **Bot :** `Rename Bot`
-- **Creator :** [Fayas](https://telegram.me/TheFayas)
-- **Channel :** [Fayas Noushad](https://telegram.me/FayasNoushad)
+- **Bot :** `Vj Rename Bot`
+- **Developer:** [Achu Vj](https://telegram.me/Achu_vjsvj)
+- **Channel :** [ORU Movies](https://t.me/ottmovies_updates)
 - **Credits :** `Everyone in this journey`
-- **Source :** [Click here](https://github.com/FayasNoushad/Rename-Bot)
+- **Source :** [Click here](https://t.me/BaabaaMm)
 - **Language :** [Python3](https://python.org)
 - **Library :** [Pyrogram v1.2.0](https://pyrogram.org)
 - **Server :** [Heroku](https://heroku.com)
 """
 START_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('Channel', url='https://telegram.me/FayasNoushad'),
-        InlineKeyboardButton('Feedback', url='https://telegram.me/TheFayas')
+        InlineKeyboardButton('Channel', url='https://t.me/ottmovies_updates'),
+        InlineKeyboardButton('👨‍💻Developer👨‍💻', url='https://telegram.me/Achu_vjsvj')
         ],[
         InlineKeyboardButton('Help', callback_data='help'),
         InlineKeyboardButton('About', callback_data='about'),
@@ -87,7 +87,7 @@ if __name__ == "__main__" :
     if not os.path.isdir(DOWNLOAD_LOCATION):
         os.makedirs(DOWNLOAD_LOCATION)
 
-FayasNoushad = Client(
+Achu Vj = Client(
     "Rename Bot",
     bot_token=os.environ.get("BOT_TOKEN"),
     api_id=int(os.environ.get("APP_ID", 12345)),
@@ -125,7 +125,7 @@ async def cb_handler(bot, update):
     else:
         await update.message.delete()
 
-@FayasNoushad.on_message(filters.command(["start"]))
+@Achu_vjsvj.on_message(filters.command(["start"]))
 async def start(bot, update):
     await bot.send_message(
         chat_id=update.chat.id,
@@ -158,11 +158,11 @@ async def save_photo(bot, update):
         )
         await bot.send_message(
             chat_id=update.chat.id,
-            text="Thumbnail Saved ✅ This Is Permanent",
+            text="Your thumbnail saved permanently 🖼",
             reply_to_message_id=update.message_id
         )
 
-@FayasNoushad.on_message(filters.command(["delthumb"]))
+@Achu_vjsvj.on_message(filters.command(["delthumb"]))
 async def delete_thumbnail(bot, update):
     thumb_image_path = DOWNLOAD_LOCATION + "/" + str(update.from_user.id) + ".jpg"
     #download_location = DOWNLOAD_LOCATION + "/" + str(update.from_user.id)
@@ -180,8 +180,7 @@ async def delete_thumbnail(bot, update):
         text="Thumbnail cleared succesfully!",
         reply_to_message_id=update.message_id
     )
-
-@FayasNoushad.on_message(filters.command(["showthumb"]))
+Your thumbnail saved permanently 🖼.on_message(filters.command(["showthumb"]))
 async def show_thumb(bot, update):
     thumb_image_path = DOWNLOAD_LOCATION + "/" + str(update.from_user.id) + ".jpg"
     if not os.path.exists(thumb_image_path):
@@ -332,7 +331,7 @@ async def rename(bot, message):
                     os.remove(thumb_image_path)
                 except:
                     pass
-                await bot.edit_message_text(text="<b>Thank you for Using Me</b>", chat_id=message.chat.id, message_id=a.message_id, disable_web_page_preview=True)
+                await bot.edit_message_text(text="<b>Thank you for Using Me😌</b>", chat_id=message.chat.id, message_id=a.message_id, disable_web_page_preview=True)
                 return
             if "file" in file_type:
                 await bot.send_document(
