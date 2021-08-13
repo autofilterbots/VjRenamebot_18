@@ -87,7 +87,7 @@ if __name__ == "__main__" :
     if not os.path.isdir(DOWNLOAD_LOCATION):
         os.makedirs(DOWNLOAD_LOCATION)
 
-Achu Vj = Client(
+ FayasNoushad = Client(
     "Rename Bot",
     bot_token=os.environ.get("BOT_TOKEN"),
     api_id=int(os.environ.get("APP_ID", 12345)),
